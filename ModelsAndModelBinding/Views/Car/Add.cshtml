@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+
+@if (ViewData["Added"] == null)
+{
+    <h1>Add a new Car</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label>VIN Number</label>
+            <input class="form-control" type="text" name="vinNum" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Manufacturer</label>
+            <input class="form-control" type="text" name="manufacturer" />
+        </div>
+        <br />
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" name="title" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <label>Year</label>
+            <input class="form-control" type="text" name="year" />
+        </div>
+        <br />
+
+        <input type="submit" name="Add Car" />
+    </form>
+}
+else
+{
+    <div class="alert alert-success">
+        @ViewData["Added"]
+    </div>
+}

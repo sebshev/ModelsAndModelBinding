@@ -10,7 +10,7 @@ namespace ModelsAndModelBinding.Models
         /// <summary>
         /// The unique 9 digit ID number for the automobile
         /// </summary>
-        public int VinNum { get; set; }
+        public string VinNum { get; set; }
 
         /// <summary>
         /// The maker of the car Ex. Honda
@@ -25,6 +25,6 @@ namespace ModelsAndModelBinding.Models
         /// <summary>
         /// The year the car was manufactured
         /// </summary>
-        public int Year { get; set; }
+        public string Year { get; set; }
     }
 }
