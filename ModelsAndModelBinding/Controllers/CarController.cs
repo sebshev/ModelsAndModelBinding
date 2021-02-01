@@ -46,6 +46,7 @@ namespace ModelsAndModelBinding.Controllers
             if (ModelState.IsValid)
             {
                 ViewData["Message"] = $"{car.Make} {car.Title} was added successfully with the VIN of {car.VinNum}";
+                // Add to DB here
             }
 
             return View();
