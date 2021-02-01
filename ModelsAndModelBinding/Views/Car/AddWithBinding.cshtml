@@ -1,7 +1,41 @@
-﻿
+﻿@model Automobile
 @{
     ViewData["Title"] = "AddWithBinding";
 }
 
-<h1>AddWithBinding</h1>
+<h1>Add with ModelBinding</h1>
+
+@if (ViewData["Message"] == null)
+{
+    <form method="post">
+        <label asp-for="VinNum"></label>
+        <input asp-for="VinNum" class="form-control" />
+        <span asp-validation-for="VinNum"></span>
+        <br />
+
+        <label asp-for="Make"></label>
+        <input asp-for="Make" class="form-control" />
+        <span asp-validation-for="Make"></span>
+        <br />
+
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title"></span>
+        <br />
+
+        <label asp-for="Year"></label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year"></span>
+        <br />
+
+        <input class="btn btn-primary" type="submit" value="Add Car" />
+    </form>
+}
+else
+{
+    <div class="alert alert-success">
+        @ViewData["Message"];
+    </div>
+}
+
 

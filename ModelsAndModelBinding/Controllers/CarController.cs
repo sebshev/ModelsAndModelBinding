@@ -22,20 +22,32 @@ namespace ModelsAndModelBinding.Controllers
             // need server side validation for all data
 
             Automobile car = new Automobile();
-            car.Manufacturer = form["manufacturer"];
+            car.Make = form["manufacturer"];
             car.VinNum = form["vinNum"];
             car.Title = form["title"];
             car.Year = form["year"];
 
             // Add to DB
 
-            ViewData["Added"] = car.Manufacturer + " " + car.Title + " was added successfully with the VIN of " + car.VinNum;
+            ViewData["Added"] = car.Make + " " + car.Title + " was added successfully with the VIN of " + car.VinNum;
 
             return View();
         }
 
+        [HttpGet]
         public IActionResult AddWithBinding() 
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddWithBinding(Automobile car)
+        {
+            if (ModelState.IsValid)
+            {
+                ViewData["Message"] = $"{car.Make} {car.Title} was added successfully with the VIN of {car.VinNum}";
+            }
+
             return View();
         }
     }
